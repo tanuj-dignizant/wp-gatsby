@@ -4,17 +4,18 @@ import logo from '../images/logo.svg';
 
 const NavBar = () => {
     const [open, setOpen] = useState(false);
+    const isBrowser = () => typeof window !== "undefined";
 
     const pages = [
         {
             label: "Collaborate",
             href: "/collaborate",
-            isActive: window.location.pathname === "/collaborate/"
+            isActive: isBrowser() && window?.location?.pathname === "/collaborate/"
         },
         {
             label: "Privacy Policy",
             href: "/privacy-policy",
-            isActive: window.location.pathname === "/privacy-policy/"
+            isActive: isBrowser() && window?.location?.pathname === "/privacy-policy/"
         },
     ];
     return (

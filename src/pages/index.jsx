@@ -3,7 +3,8 @@ import Layout from "../components/Layout"
 
 const IndexPage = () => {
   // Redirect to collobrate page
-  if (window.location.pathname === '/') {
+  const isBrowser = () => typeof window !== "undefined";
+  if (isBrowser() && window.location.pathname === '/') {
     window.location.href = '/collaborate';
   }
   return (
