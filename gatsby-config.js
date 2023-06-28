@@ -7,9 +7,11 @@ module.exports = {
     siteUrl: `https://www.yourdomain.tld`
   },
   plugins: [{
-    resolve: 'gatsby-source-wordpress',
+    resolve: 'gatsby-source-graphql',
     options: {
-      "url": "http://localhost/gatsby-demo/server/graphql"
+      typeName: 'WordPress',
+      fieldName: 'wordpress',
+      "url": "https://tgibfnov2022.click/graphql"
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-postcss"]
 };

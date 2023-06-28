@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.elementor-column {
+  position: relative;
+  min-height: 1px;
+  display: flex;
+}
+.elementor-button {
+  display: inline-block;
+  line-height: 1;
+  background-color: #69727d;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 3px;
+  color: #fff;
+  fill: #fff;
+  text-align: center;
+  transition: all .3s;
+}
+.elementor img {
+  height: auto;
+  max-width: 100%;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.elementor:not(.elementor-bc-flex-widget) .elementor-widget-wrap {
+  display: flex;
+}
+.elementor-widget-wrap {
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+@media (max-width: 1599px) {
+    body .elementor > .elementor-section.elementor-section-boxed > .elementor-container, body .container {
+    padding: 0 15px;
+    }
+}
+@media (max-width: 1024px) {
+    .elementor-section .elementor-container {
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 767px) {
+    .elementor-column {
+        width: 100%;
+    }
+}
