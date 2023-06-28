@@ -94,8 +94,8 @@ const NavBar = () => {
                                 <div>
                                     <img
                                         className="h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                                        alt="Workflow"
+                                        src={logo}
+                                        alt=""
                                     />
                                 </div>
                                 <div className="-mr-2">
@@ -126,29 +126,26 @@ const NavBar = () => {
                         </div>
                         <div className="py-6 px-5 space-y-6">
                             <div className="grid grid-cols-1 gap-y-4 gap-x-8">
-                                <a
-                                    href="#"
-                                    className="text-base font-medium text-gray-900 hover:text-gray-700"
-                                >
-                                    Home
-                                </a>
-                                <a
-                                    href="#"
-                                    className="text-base font-medium text-gray-900 hover:text-gray-700"
-                                >
-                                    About
-                                </a>
+                                {pages.map((page) => (
+                                    <Link
+                                        to={page.href}
+                                        className={`text-base capitalize font-medium text-gray-500 hover:text-gray-900 ${page.isActive ? 'text-[#55b64b]' : ''}`}
+                                    >
+                                        {page.label}
+                                    </Link>
+                                ))}
+
                             </div>
                             <div>
                                 <a
                                     href="#"
-                                    className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                                    className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#55b64b]"
                                 >
                                     Sign up
                                 </a>
-                                <p className="mt-6 text-center text-base font-medium text-gray-500">
+                                <p className="mt-6 text-center text-base font-medium text-[#55b64b]">
                                     Existing customer?{' '}
-                                    <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                                    <a href="#" className="text-[#55b64b]">
                                         Sign in
                                     </a>
                                 </p>
